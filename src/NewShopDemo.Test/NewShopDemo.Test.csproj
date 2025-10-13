@@ -18,4 +18,8 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NewShopDemo\NewShopDemo.csproj" />
+  </ItemGroup>
+
 </Project>
