@@ -106,5 +106,10 @@ namespace NewShopDemo.Models
         {
             _firstName = firstName;
         }
+
+        private void SetLastName(string lastName)
+        {
+            _lastName = lastName;
+        }
     }
 }
