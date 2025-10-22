@@ -85,5 +85,10 @@ namespace NewShopDemo.Models
 
             return customer;
         }
+
+        public bool IsValid()
+        {
+            return _isValid;
+        }
     }
 }
