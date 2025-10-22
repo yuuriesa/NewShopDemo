@@ -1,4 +1,5 @@
 using System.Net.Sockets;
+using Microsoft.AspNetCore.Mvc;
 
 namespace NewShopDemo.Models
 {
@@ -21,5 +22,28 @@ namespace NewShopDemo.Models
         //public ICollection<Address> Addresses => _addresses;
         //public ICollection<Order> Orders { get; set; } = new List<Order>();
         public string ErrorMessageIfIsNotValid { get; private set; } = string.Empty;
+
+        // constructors
+        private Customer()
+        {
+
+        }
+        private Customer
+        (
+            int customerId,
+            string firstName,
+            string lastName,
+            string emailAddress,
+            DateOnly dateOfBirth
+        )
+        {
+            CustomerId = customerId;
+            _firstName = firstName;
+            _lastName = lastName;
+            _emailAddress = emailAddress;
+            _dateOfBirth = dateOfBirth;
+
+            //Validate()
+        }
     }
 }
