@@ -121,5 +121,32 @@ namespace NewShopDemo.Models
         {
             _dateOfBirth = DateOnly.FromDateTime(dateTime: dateOfBirth);
         }
+
+        private void Validate()
+        {
+            if (_firstName.Length > 40)
+            {
+                _isValid = false;
+                ErrorMessageIfIsNotValid = "Must have a maximum of 40 characters (FirstName).";
+            }
+            if (_lastName.Length > 40)
+            {
+                _isValid = false;
+                ErrorMessageIfIsNotValid = "Must have a maximum of 40 characters (LastName).";
+            }
+
+            DateTime dateNow = DateTime.Now;
+
+            if (_dateOfBirth.ToDateTime(TimeOnly.MinValue).ToUniversalTime().Date > dateNow.Date)
+            {
+                _isValid = false;
+                ErrorMessageIfIsNotValid = "You cannot put the date with the day after today.";
+            }
+
+            if (ErrorMessageIfIsNotValid == string.Empty)
+            {
+                _isValid = true;
+            }
+        }
     }
 }
