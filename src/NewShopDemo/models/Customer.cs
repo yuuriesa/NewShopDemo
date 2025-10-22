@@ -64,5 +64,26 @@ namespace NewShopDemo.Models
 
             return customer;
         }
+
+        public static Customer SetExistingInfo
+        (
+            int customerId,
+            string firstName,
+            string lastName,
+            string emailAddress,
+            DateOnly dateOfBirth
+        )
+        {
+            Customer customer = new Customer
+            (
+                customerId: customerId,
+                firstName: firstName,
+                lastName: lastName,
+                emailAddress: emailAddress,
+                dateOfBirth: dateOfBirth
+            );
+
+            return customer;
+        }
     }
 }
