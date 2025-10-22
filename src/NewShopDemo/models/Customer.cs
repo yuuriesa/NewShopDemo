@@ -116,5 +116,10 @@ namespace NewShopDemo.Models
         {
             _emailAddress = emailAddress;
         }
+
+        private void SetDateOfBirth(DateTime dateOfBirth)
+        {
+            _dateOfBirth = DateOnly.FromDateTime(dateTime: dateOfBirth);
+        }
     }
 }
