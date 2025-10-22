@@ -101,5 +101,10 @@ namespace NewShopDemo.Models
             }
             CustomerId = customerId;
         }
+
+        private void SetFirstName(string firstName)
+        {
+            _firstName = firstName;
+        }
     }
 }
