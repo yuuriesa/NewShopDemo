@@ -43,7 +43,7 @@ namespace NewShopDemo.Models
             _emailAddress = emailAddress;
             _dateOfBirth = dateOfBirth;
 
-            //Validate()
+            Validate();
         }
 
         // public methods
@@ -56,11 +56,11 @@ namespace NewShopDemo.Models
         )
         {
             Customer customer = new Customer();
-            //customer.SetFirstName(firstName: firstName);
-            //customer.SetLastName(lastName: lastName);
-            //customer.SetEmailAddress(emailAddress: emailAddress);
-            //customer.SetDateOfBirth(dateOfBirth: dateOfBirth);
-            //customer.Validate();
+            customer.SetFirstName(firstName: firstName);
+            customer.SetLastName(lastName: lastName);
+            customer.SetEmailAddress(emailAddress: emailAddress);
+            customer.SetDateOfBirth(dateOfBirth: dateOfBirth);
+            customer.Validate();
 
             return customer;
         }
