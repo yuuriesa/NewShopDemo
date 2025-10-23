@@ -1,10 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+using NewShopDemo.Models;
 
 namespace NewShopDemo.Data
 {
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
-        // public DbSet<Customer> Customers { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
         public ApplicationDbContext(DbContextOptions options) : base(options: options)
         {
