@@ -17,5 +17,42 @@ namespace NewShopDemo.Data
             var connectionString = "Server=localhost;Database=NewShopDemo;User=SA;Password=Password123!;TrustServerCertificate=True;MultipleActiveResultSets=true";
             optionsBuilder.UseSqlServer(connectionString: connectionString);
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Customer>(entity =>
+            {
+                entity.HasKey(c => c.CustomerId);
+
+                entity.Property(c => c.FirstName)
+                .IsRequired()
+                .HasMaxLength(40)
+                .HasColumnName("FirstName")
+                .HasField("_firstName");
+
+                entity.Property(c => c.LastName)
+                .IsRequired()
+                .HasMaxLength(40)
+                .HasColumnName("LastName")
+                .HasField("_lastName");
+
+                entity.HasIndex(c => c.EmailAddress)
+                .IsUnique();
+
+                entity.Property(c => c.EmailAddress)
+                .IsRequired()
+                .HasColumnName("EmailAddress")
+                .HasField("_emailAddress");
+
+                entity.Property(c => c.DateOfBirth)
+                .IsRequired()
+                .HasColumnName("DateOfBirth")
+                .HasField("_dateOfBirth")
+                .HasDefaultValue(DateOnly.FromDateTime(dateTime: DateTime.Now));
+
+                entity.Ignore(c => c.ErrorMessageIfIsNotValid);
+            }
+            );
+        }
     }
 }
