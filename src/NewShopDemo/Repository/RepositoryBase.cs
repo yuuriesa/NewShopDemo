@@ -13,5 +13,10 @@ namespace NewShopDemo.Repository
             _dbContext = dbContext;
             _dbSetEntity = _dbContext.Set<TEntity>();
         }
+
+        public void SaveChanges()
+        {
+            _dbContext.SaveChanges();
+        }
     }
 }
