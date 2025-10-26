@@ -8,5 +8,6 @@ namespace NewShopDemo.Repository
         public void AddRange(IEnumerable<TEntity> entities);
         public void Update(int id, TEntity entity);
         public void Remove(int id);
+        public void SaveChanges();
     }
 }
