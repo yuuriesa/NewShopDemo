@@ -21,7 +21,7 @@ namespace NewShopDemo.Repository
 
         public void AddRange(IEnumerable<TEntity> entities)
         {
-            throw new NotImplementedException();
+            _dbSetEntity.AddRange(entities: entities);
         }
 
         public TEntity GetById(int id)
