@@ -41,7 +41,7 @@ namespace NewShopDemo.Repository
 
         public void Update(int id, TEntity entity)
         {
-            throw new NotImplementedException();
+            _dbSetEntity.Update(entity: entity);
         }
     }
 }
