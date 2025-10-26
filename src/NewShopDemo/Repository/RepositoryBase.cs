@@ -26,7 +26,7 @@ namespace NewShopDemo.Repository
 
         public TEntity GetById(int id)
         {
-            throw new NotImplementedException();
+            return _dbSetEntity.Find(keyValues: id);
         }
 
         public void Remove(int id)
