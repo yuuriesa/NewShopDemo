@@ -16,7 +16,7 @@ namespace NewShopDemo.Repository
 
         public void Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            _dbSetEntity.Add(entity: entity);
         }
 
         public void AddRange(IEnumerable<TEntity> entities)
