@@ -31,7 +31,7 @@ namespace NewShopDemo.Repository
 
         public void Remove(int id)
         {
-            throw new NotImplementedException();
+            _dbSetEntity.Remove(entity: _dbSetEntity.Find(keyValues: id));
         }
 
         public void SaveChanges()
